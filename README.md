@@ -42,7 +42,8 @@ template and any or all pages on your site.
     </footer>
     <script src="/assets/func/init.js"></script>
     <script defer>
-FUNC.init.register('diagram', 'FUNC.diagram'), ['core',];
+FUNC.init.register('#domain-name-org', 'site', ['dom', 'event]);
+FUNC.init.register('diagram', 'diagram', ['core']);
 FUNC.init.run();
     </script>
   </body>
