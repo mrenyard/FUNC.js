@@ -5,11 +5,11 @@
     <title>[TITLE] - ramp.matt-laptop.lan</title>
     <meta name="description" content="[SUMMARY]">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="//dev.ramp.matt-laptop.lan/assets/style/import/base.css">
-    <link rel="stylesheet" href="//dev.ramp.matt-laptop.lan/assets/style/scratch/drop.css">
+    <link rel="stylesheet" href="//dev.DOMAIN/assets/style/import/base.css">
+    <link rel="stylesheet" href="//dev.DOMAIN/assets/style/scratch/drop.css">
     <script src="//dev.ramp.matt-laptop.lan/assets/func/extlibs/modernizr-custom.js"></script>
   </head>
-  <body id="ramp-matt-laptop-lan">
+  <body id="SITE_ID">
     <dialog id="modal" open><form method="post">
       <header>
         <h2>Modal Dailog!</h2>
