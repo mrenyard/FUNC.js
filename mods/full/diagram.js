@@ -4,6 +4,8 @@
  * @package func.diagram
  * @depends func.core
  * @version 0.1;
+ * @example
+ * FUNC.init.register('.diagram', 'diagram', ['core']);
  */
 var FUNC = window.FUNC || {};
 FUNC.version = FUNC.version || .1;
@@ -11,7 +13,14 @@ FUNC.version = FUNC.version || .1;
 /**
  * Build, edit and arrange common diagrams. 
  * UML (Class, Sequence, Activity, Use Case), Database (Entity Relationship)
- */
+ * @example .html
+ * <section id="[diagram-id:title]" class="diagram [diagram-type] view-[view-variant]">
+ *  <header><h2>[DiagramId:title]</h2></header>
+*  <div class="canvas">
+*     ...
+*   </div>
+* </section>
+*/
 FUNC.diagram = function(elm)
 {
   //- USE (dependant namespaces)

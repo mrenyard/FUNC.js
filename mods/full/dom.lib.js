@@ -48,7 +48,7 @@ FUNC.dom = function()
     return o;
   };
 
-  var addContents = function(o, content)
+  var updateContents = function(o, content)
   {
     let box = (o.childElementCount == 1 && o.children[0].tagName === 'FORM') ? o.children[0] : o;
     let h = box.querySelector('header'),
@@ -93,7 +93,7 @@ FUNC.dom = function()
 
   var updateDialog = function(type, heading, summary, extendedSummary = '')
   {
-    addContents(modal, extendedSummary);
+    updateContents(modal, extendedSummary);
     dHh.textContent = heading;
     dHS.textContent = summary;
     switch (type) {
@@ -142,5 +142,5 @@ FUNC.dom = function()
   dialog.close = function() { modal.close(); }
 
   //- PUBLIC ACCESS
-  return {main, addPageSection, updateDialog, dialog, dialogType, sectionType, addContents, buildSection};
+  return { main, addPageSection, updateDialog, dialog, dialogType, sectionType, updateContents, buildSection };
 }();

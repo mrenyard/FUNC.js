@@ -5,7 +5,7 @@
  * @depends func.dom, func.event 
  * @version 0.1;
  * @example
- * FUNC.init.register('#domain-name-org', 'FUNC.site', ['FUNC.dom', 'FUNC.event]);
+ * FUNC.init.register('#domain-name-org', 'site', ['dom', 'event']);
  */
 var FUNC = window.FUNC || {};
 FUNC.version = FUNC.version || .1;
@@ -26,6 +26,7 @@ FUNC.site = function(elm)
 
   //- SHARED PRIVATE VARABLES
   // var _varOne = [], _varTwo;
+  var _pSp = 0; // previous scroll position
 
   //- NAMESPACE METHODS
   // _.method = function(param1, param2) {
@@ -61,22 +62,11 @@ FUNC.site = function(elm)
         return;
       }
     });
-    document.addEventListener('click', (e) => {
-      if (location.hash == '#top') {
-        if (e.target.id == 'quick-links') { return; }
-        location.href = '#';
-        document.body.classList.remove('kill-transition');
-      }
-    });
     document.addEventListener('scroll', (e) => {
-      if (location.hash == '#top' && window.scrollY > 0) {
-        document.body.classList.add('kill-transition');
+      if (location.hash == '#top') {
+        if (window.scrollY > _pSp) { location.href = '#'; }
       }
-      if (document.body.classList.contains('kill-transition') && window.scrollY >= quickLinks.offsetHeight) {
-        location.href = '#';
-        window.scroll(-(quickLinks.offsetHeight), 0);
-        document.body.classList.remove('kill-transition');
-      }
+      _pSp = window.scrollY;
     });
   }
   

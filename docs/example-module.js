@@ -5,7 +5,7 @@
  * @depends func.lib1, func.lib2 
  * @version 0.1;
  * @example
- * FUNC.init.register('moduleName', 'FUNC.module', ['lib1', 'lib2]);
+ * FUNC.init.register('querySelector:string', 'moduleName:string', ['lib1:string', 'lib2:string']);
  */
 var FUNC = window.FUNC || {};
 FUNC.version = FUNC.version || .1;

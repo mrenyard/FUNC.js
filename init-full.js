@@ -148,8 +148,8 @@ FUNC.init = function()
   /**
    * Register potentual FUNC modules needed site wide, only loads those scripts actually need per page.
    * @param {srting} {qS: querySelector:string} - Identifing HtmlClass:name for modual use. 
-   * @param {string} {mN: {moduleName]} Modual name to be exacuted against each relevant HtmlEntity (fragment).
-   * @param {string[]} {ds: dependencies} - FUNC[library][:array] List of dependent library names ordered in loading propriety.
+   * @param {string} {mN: moduleName:string} Modual name to be exacuted against each relevant HtmlEntity (fragment).
+   * @param {string[]} {ds: dependencies:string[]} - FUNC[library][:array] List of dependent library names ordered in loading propriety.
    */
   var register = function(qS, mN, ds)
   {
