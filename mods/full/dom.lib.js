@@ -20,7 +20,7 @@ FUNC.dom = function()
   //- NAMESPACE PROPERTIES
 
   //- PRIVATE VARABLES
-  var dialog = {}, dH, dB1, dB2,
+  var dialog = {}, dHh, dHs, dB1, dB2,
     main = document.getElementById('main'),
     modal = document.getElementById('modal'),
     sectionType = new N('section', 'article', 'section-form', 'dialog-form'), //'record', 'collection'),
@@ -91,23 +91,28 @@ FUNC.dom = function()
     }
   };
 
-  var updateDialog = function(heading, type, content)
+  var updateDialog = function(type, heading, summary, extendedSummary = '')
   {
-    dH.textContent = heading;
+    addContents(modal, extendedSummary);
+    dHh.textContent = heading;
+    dHS.textContent = summary;
     switch (type) {
       case 1:
-        dB1.textContent = 'Cancel';
-        dB2.textContent = 'Confirm';
+        let bTc = modal.getAttribute('data-confirm').split(',');
+        dB1.textContent = bTc[0];
+        dB2.textContent = bTc[1];
         dB2.hidden = false; 
         break;
       case 2:
-        dB1.textContent = 'Cancel';
-        dB2.textContent = 'Submit';
+        let bTs = modal.getAttribute('data-submit').split(',');
+        dB1.textContent = bTs[0];
+        dB2.textContent = bTs[1];
         dB2.hidden = false; 
         break;
       case 3:
-        dB1.textContent = 'Wait';
-        dB2.textContent = 'Reload';
+        let bTr = modal.getAttribute('data-reload').split(',');
+        dB1.textContent = bTr[0];
+        dB2.textContent = bTr[1];
         dB2.hidden = false; 
         break;
       case 0:
@@ -121,28 +126,17 @@ FUNC.dom = function()
   //- INITIALISE
   if (modal != null) {
     if (modal.open == true) { modal.open = false; modal.showModal(); }
-    modal.classList.add('ready');
     let f = modal.querySelector('footer')
     if (f != null) {
-      let bs = f.querySelectorAll('button');
-      if (bs != null) {
-        dB1 = bs[0]; dB2 = bs[1];
+      let fS = f.querySelectorAll('button');
+      if (fS != null) {
+        dB1 = fS[0]; dB2 = fS[1];
       }
     }
-    dH = modal.querySelector('h2');
+    let dH = modal.querySelector('header');
+    dHh = dH.querySelector('h2');
+    dHS = dH.querySelector('p');
   }
-  // else {
-  //   modal = buildSection(sectionType.DIALOG_FORM, 'Modal Dialog', 2);
-  //   let x = document.createElement('button'),
-  //    h = modal.querySelector('header'),
-  //    f = document.createElement('footer');
-  //   x.setAttribute('formmethod', 'dialog');
-  //   x.append('X');
-  //   h.appendChild(x);
-  //   modal.appendChild(f);
-  //   dH = h.querySelector('h2');
-  //   document.body.insertBefore(modal, document.body.firstElementChild);
-  // }
 
   dialog.open = function() { modal.showModal(); }
   dialog.close = function() { modal.close(); }
