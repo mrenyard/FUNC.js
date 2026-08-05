@@ -98,19 +98,19 @@ FUNC.dom = function()
     dHS.textContent = summary;
     switch (type) {
       case 1:
-        let bTc = modal.getAttribute('data-confirm').split(',');
+        let bTc = modal.dataset.confirm.split(',');
         dB1.textContent = bTc[0];
         dB2.textContent = bTc[1];
         dB2.hidden = false; 
         break;
       case 2:
-        let bTs = modal.getAttribute('data-submit').split(',');
+        let bTs = modal.dataset.submit.split(',');
         dB1.textContent = bTs[0];
         dB2.textContent = bTs[1];
         dB2.hidden = false; 
         break;
       case 3:
-        let bTr = modal.getAttribute('data-reload').split(',');
+        let bTr = modal.dataset.reload.split(',');
         dB1.textContent = bTr[0];
         dB2.textContent = bTr[1];
         dB2.hidden = false; 
