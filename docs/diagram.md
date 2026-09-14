@@ -75,61 +75,61 @@ diagram 'Title', 'Type' and 'Veiw Variant'.
    - ['erd-database'] ('detail')
 
 ```html
-    <div id="main" role="main">
-      <header><h1>Page Main Heading</h1></header>
-      ...
-      <section id="[diagram-id:title]" class="diagram [diagram-type] view-[view-variant]">
-        <header><h2>[DiagramId:title]</h2></header>
-        <div class="canvas">
-          ...
-        </div>
-      </section>
+<main id="main">
+  <header><h1>Page Main Heading</h1></header>
+  ...
+  <section id="[diagram-id:title]" class="diagram [diagram-type] view-[view-variant]">
+    <header><h2>[DiagramId:title]</h2></header>
+    <div class="canvas">
       ...
     </div>
+  </section>
+  ...
+</main>
 ```
 ### Shapes
 Every `[HtmlElement:article]` represents a single 'Shape' on our diagram canvas.
 ```html
-      <section id="[diagram-id:title]" class="diagram [diagram-type] view-[view-type]">
-        ...
-        <div class="canvas">
-          <article id="[shape-title:id]" class="[shape-type] [shape-variant]">
-            <header contenteditable="true"><h3 title="[shapeType]: [shapeTitle]">[shapeTitle]</h3></header>
-          </article>
-          ...
-        </div>
-      </section>
+<section id="[diagram-id:title]" class="diagram [diagram-type] view-[view-type]">
+  ...
+  <div class="canvas">
+    <article id="[shape-title:id]" class="[shape-type] [shape-variant]">
+      <header contenteditable="true"><h3 title="[shapeType]: [shapeTitle]">[shapeTitle]</h3></header>
+    </article>
+    ...
+  </div>
+</section>
 ```
 ### UML Class
 UML Classes are formated as below 
 ```html
-        <div class="canvas">
-          <article id="[class-title:id]" class="class [abstract]">
-            <header contenteditable="true"><h3 title="Class: [classTitle]">[classTitle]</h3></header>
-            <ol>
-              <li class="properties"><h4>Properties</h4>
-                <ul contenteditable="true">
-                  <li>{propertyName}: {dataType}</li>
-                  <li>...</li>
-                </ul>
-              </li>
-              <li class="methods"><h4>Methods</h4>
-                <ul contenteditable="true">
-                  <li>{methodName}({dataType} {param}): {returnType}</li>
-                  <li>...</li>
-                </ul>
-              </li>
-              <li class="associations"><h4>Associations</h4>
-                <ul>
-                  <li class="[associationType]"><a href="#{associated-class}">{associatedClass} ([associationType])</a></li>
-                  <li class="[associationType]"><a href="#{associated-class}">{associatedClass} ([associationType])</a><em class="label">[associationLabel]</em></li>
-                  <li>...</li>
-                </ul>
-              </li>
-            </ol>
-          </article>
-          ...
-        </div>
+<div class="canvas">
+  <article id="[class-title:id]" class="class [abstract]">
+    <header contenteditable="true"><h3 title="Class: [classTitle]">[classTitle]</h3></header>
+    <ol>
+      <li class="properties"><h4>Properties</h4>
+        <ul contenteditable="true">
+          <li>{propertyName}: {dataType}</li>
+          <li>...</li>
+        </ul>
+      </li>
+      <li class="methods"><h4>Methods</h4>
+        <ul contenteditable="true">
+          <li>{methodName}({dataType} {param}): {returnType}</li>
+          <li>...</li>
+        </ul>
+      </li>
+      <li class="associations"><h4>Associations</h4>
+        <ul>
+          <li class="[associationType]"><a href="#{associated-class}">{associatedClass} ([associationType])</a></li>
+          <li class="[associationType]"><a href="#{associated-class}">{associatedClass} ([associationType])</a><em class="label">[associationLabel]</em></li>
+          <li>...</li>
+        </ul>
+      </li>
+    </ol>
+  </article>
+  ...
+</div>
 ```
 Useful and Related Content
 --------------------------------------------------

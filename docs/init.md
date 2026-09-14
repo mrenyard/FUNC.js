@@ -95,7 +95,7 @@ const MyConcreteClass = class extends MyAbstractClass
 ### A Concrete class inheriting from FUNC.Base
 ```javascript
   //- LOCAL CLASSES.
-  const MyAbstractClass = class extends FUNC.Base
+  const MyConcreteClass = class extends FUNC.Base
   {
     #propertyOne;
     #propertyTwo;
